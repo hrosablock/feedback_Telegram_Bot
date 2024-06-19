@@ -1,0 +1,4 @@
+aiogram
+contextlib
+motor
+pymongo
