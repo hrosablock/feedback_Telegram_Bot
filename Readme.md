@@ -25,11 +25,7 @@ This is a simple feedback bot designed to facilitate communication between users
 
 ### Database: `feedback`
 
-#### Collection:
-
-1. **users**
-
-In `blocked_users`, there should be one document with `_id: 0` and an array `users`.
+#### Collection: `users`
 
 // Start Mongosh
 ```
