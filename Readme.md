@@ -54,7 +54,6 @@ db.blocked_users.insertOne({
     users: []
 })
 ```
-**
 
 ## Setup
 
