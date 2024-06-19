@@ -24,8 +24,8 @@ from keyboards.callbacks import get_keyboard
 from env import admin_id, flood_delay
 
 router = Router()
-router.message.middleware(SpamMiddleware())
 router.message.middleware(FloodMiddleware())
+router.message.middleware(SpamMiddleware())
 
 
 @router.message(CommandStart())
