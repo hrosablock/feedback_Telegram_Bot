@@ -25,10 +25,9 @@ This is a simple feedback bot designed to facilitate communication between users
 
 ### Database: `feedback`
 
-#### Collections:
+#### Collection:
 
 1. **users**
-2. **blocked_users**
 
 In `blocked_users`, there should be one document with `_id: 0` and an array `users`.
 
@@ -43,16 +42,6 @@ use feedback
 // Create the users collection
 ```
 db.createCollection("users")
-```
-// Create the blocked_users collection and insert the initial document
-```
-db.createCollection("blocked_users")
-```
-```
-db.blocked_users.insertOne({
-    _id: 0,
-    users: []
-})
 ```
 
 ## Setup

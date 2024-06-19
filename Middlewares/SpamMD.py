@@ -19,7 +19,7 @@ class SpamMiddleware(BaseMiddleware):
             data: Dict[str, Any],) -> Any:
                 
                 client = AsyncIOMotorClient(host='localhost', port=27017)
-                blocked = await client.feedback.blocked_users.find_one({'_id': 0})
+                blocked = await client.feedback.users.find_one({'_id': 'blocked'})
                 block_list = blocked['users']
                 
                 if event.chat.id in block_list:

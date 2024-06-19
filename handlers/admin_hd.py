@@ -36,11 +36,11 @@ async def callbacks_ban(callback: CallbackQuery, bot : Bot, db: ADB):
 
         messages = await db.users.find_one({'_id': int(id)})
 
-        blocked = await db.blocked_users.find_one({'_id': 0})
+        blocked = await db.users.find_one({'_id': 'blocked'})
 
         if id not in blocked['users']:
             
-            await db.blocked_users.update_one({'_id': 0}, {'$push': {'users': int(id)}})
+            await db.users.update_one({'_id': 'blocked'}, {'$push': {'users': int(id)}})
 
             await bot.send_message(chat_id=id, text="You've been blocked by the administrator")
 

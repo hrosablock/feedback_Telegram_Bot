@@ -42,7 +42,7 @@ async def admin_start_handler(message: Message, db: ADB) -> None:
 
     await message.answer(f"Hello, user {html.bold(htmlescape(message.from_user.full_name))}!\n\n"
                          'Here you can send your message to the chat administration\n(Add only 1 attachment)\n\n'
-                         f"Flood delay - {flood_delay}")
+                         f"Flood delay - {flood_delay} seconds")
     
 @router.message(~F.text)
 async def send_handler(message: Message, db: ADB) -> None:
