@@ -25,7 +25,7 @@ This is a simple feedback bot designed to facilitate communication between users
 
 ### Database: `feedback`
 
-#### Collection: `**users**`
+#### Collection: `users`
 
 // Start Mongosh
 ```
