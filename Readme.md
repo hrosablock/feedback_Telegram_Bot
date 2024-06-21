@@ -48,7 +48,7 @@ db.createCollection("users")
 1. Edit a `env_example.py` file and rename it to `env.py` and fill it with the necessary configuration data.
 2. Run the `main.py` file to start the bot.
 
-### Example .env File
+### Example env.py File
 ```python
 botToken : str = 'TOKEN'
 admin_id : int = 123456789
