@@ -61,7 +61,7 @@ async def callbacks_del(callback: CallbackQuery):
 
 
 @router.callback_query(F.data.startswith("reply_"))
-async def callbacks_ban(callback: CallbackQuery, db: ADB, bot : Bot):
+async def callbacks_reply(callback: CallbackQuery, db: ADB, bot : Bot):
     with suppress(TelegramBadRequest):
         id = callback.data.split("_")[1]
         msgid = callback.data.split("_")[2]
