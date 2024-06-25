@@ -29,7 +29,7 @@ router.message.middleware(SpamMiddleware())
 
 
 @router.message(CommandStart())
-async def admin_start_handler(message: Message, db: ADB) -> None:
+async def user_start_handler(message: Message, db: ADB) -> None:
 
     with suppress(DuplicateKeyError):
         await db.users.insert_one(
@@ -57,7 +57,7 @@ async def send_handler(message: Message, db: ADB) -> None:
         await message.answer("Sorry, we don't work with this type of message")
 
 @router.message(F.text)
-async def just_text(message: Message, bot: Bot, db: ADB) -> None:
+async def send_just_text_handler(message: Message, bot: Bot, db: ADB) -> None:
     msg = await bot.send_message(chat_id=admin_id, text=f"🙎‍♂️{htmlescape(message.from_user.full_name)}, {f'Username: @{message.from_user.username}\n' if message.from_user.username else ''}Id: <code>{message.from_user.id}</code>\n\n{htmlescape(message.text)}", reply_markup=get_keyboard(message.from_user.id, message.message_id))
     await db.users.update_one({'_id': message.from_user.id}, {'$push': {'ids': msg.message_id}})
 
