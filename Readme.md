@@ -27,18 +27,6 @@ This is a simple feedback bot designed to facilitate communication between users
 
 #### Collection: `users`
 
-// Start Mongosh
-```
-mongosh
-```
-// Switch to the feedback database (or create it if it doesn't exist)
-```
-use feedback
-```
-// Create the users collection
-```
-db.createCollection("users")
-```
 
 ## Setup
 
